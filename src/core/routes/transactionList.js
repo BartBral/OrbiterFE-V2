@@ -1426,7 +1426,7 @@ export default {
           if (index < maxRetryCount) {
             await util.sleep(2000)
           } else {
-            throw new Error(`getTransactionList err ${error.message}`)
+            throw new Error(`getTransactionList err ${err.message}`)
           }
         }
       }

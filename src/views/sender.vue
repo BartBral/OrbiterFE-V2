@@ -1,16 +1,12 @@
 <template>
   <div class="senderContent">
     <keep-alive>
-      <Transfer v-on:stateChanged="changeState"
-                v-if="status === '1' && !showDetail" />
+      <Transfer v-on:stateChanged="changeState" v-if="status === '1' && !showDetail" />
     </keep-alive>
-    <Confirm v-on:stateChanged="changeState"
-             v-if="status === '2' && !showDetail" />
-    <Proceed v-on:stateChanged="changeState"
-             v-if="status === '3' && !showDetail" />
-    <Detail :detailData="detailData"
-            v-on:stateChanged="changeState"
-            v-if="showDetail" />
+    <Confirm v-on:stateChanged="changeState" v-if="status === '2' && !showDetail" />
+    <Proceed v-on:stateChanged="changeState" v-if="status === '3' && !showDetail" />
+    <Detail :detailData="detailData" v-on:stateChanged="changeState" v-if="showDetail" />
+    <faucet />
   </div>
 </template>
 
@@ -20,7 +16,7 @@ import Confirm from '../components/sender/confirm'
 import Proceed from '../components/sender/proceed'
 import Detail from '../components/sender/detail'
 import Middle from '../util/middle/middle'
-
+import faucet from '../components/sender/faucet'
 export default {
   name: 'Sender',
   props: {
@@ -29,7 +25,8 @@ export default {
     Transfer,
     Confirm,
     Proceed,
-    Detail
+    Detail,
+    faucet
   },
   data() {
     return {
@@ -74,9 +71,11 @@ export default {
     margin: 0 auto;
     width: 100%;
     max-width: 128rem;
+
     .left {
       margin-left: 6.7%;
     }
+
     .right {
       margin-right: 6.7%;
     }
