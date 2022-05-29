@@ -6,14 +6,18 @@ import {
   Notification,
   MessageBox,
   Button,
+  cascader,
+  input
 } from 'element-ui'
 const element = {
-  install: function(Vue) {
+  install: function (Vue) {
     Vue.use(Steps)
     Vue.use(Step)
     Vue.use(InputNumber)
     Vue.use(Loading)
     Vue.use(Button)
+    Vue.use(cascader)
+    Vue.use(input)
     // Vue.prototype.$message = Message
     Vue.prototype.$notify = Notification
     Vue.prototype.$msgbox = MessageBox

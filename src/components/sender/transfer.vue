@@ -242,7 +242,6 @@ import { DydxHelper } from '../../util/dydx/dydx_helper'
 import Web3 from 'web3'
 import { netStateBlock } from '../../util/confirmCheck'
 import { asyncGetExchangeToUsdRate } from "../../util/coinbase"
-import { cons } from 'fp-ts/lib/NonEmptyArray'
 
 const queryParamsChainMap = {
   Mainnet: 1,
